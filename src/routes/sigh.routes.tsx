@@ -1,22 +1,21 @@
-import React from "react"
+import React                    from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 
-import { Home }   from "../screens/Home"
-import { SignIn } from "../screens/SignIn"
-import { theme } from "../global/styles/theme"
+import { SignIn }               from "../screens/SignIn"
+
+import { theme }                from "../global/styles/theme"
 
 const { Navigator, Screen } = createStackNavigator()
 
 declare global {
     namespace ReactNavigation{
         export interface RootParamList{
-            Home: any
             SignIn: any
         }
     }
 }
 
-export function AuthRoutes() {
+export function SighRoutes() {
     return (
         <Navigator
             screenOptions={{
@@ -27,10 +26,6 @@ export function AuthRoutes() {
             <Screen
                 name="SignIn"
                 component={SignIn}
-            />
-            <Screen
-                name="Home"
-                component={Home}
             />
         </Navigator>
     )
